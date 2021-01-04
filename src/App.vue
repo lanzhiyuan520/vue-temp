@@ -6,7 +6,7 @@
 <script>
   export default {
     name : 'App',
-    mounted () {
+    async mounted () {
       this.$http.index.getHouseRequest().then(res => {
         this.$store.commit('setHouseList',res.data.data)
       })

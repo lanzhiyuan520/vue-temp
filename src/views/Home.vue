@@ -14,6 +14,9 @@ export default {
     ...mapState({
       index : state => state.index
     })
+  },
+  mounted () {
+
   }
 }
 </script>

@@ -26,3 +26,5 @@ src/http --> 请求模块 可按模块划分 api为接口url文件 modules为请
 src/common --> 公共文件
 
 src/filters --> 全局过滤器
+
+src/mixin -->全局mixin

@@ -1,18 +1,37 @@
 <template>
   <div id="app">
-    <router-view/>
+    <ul class="nav">
+      <li @click="go('/')">首页</li>
+      <li @click="go('/about')">关于</li>
+    </ul>
+    <keep-alive :include="cache">
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 <script>
   export default {
     name : 'App',
-    async mounted () {
-      this.$http.index.getHouseRequest().then(res => {
-        this.$store.commit('setHouseList',res.data.data)
-      })
+    data () {
+      return {
+        cache : ['Home']
+      }
+    },
+    methods : {
+      go (p) {
+        this.$router.push(p)
+      }
     }
   }
 </script>
-<style>
+<style lang="scss">
 @import "common/css/style.css";
+  .nav {
+    display: flex;
+    list-style: none;
+    li {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
 </style>

@@ -16,7 +16,10 @@ export default {
     })
   },
   mounted () {
-
+    console.log('home')
+    this.$http.index.getHouseRequest().then(res => {
+      this.$store.commit('setHouseList',res.data.data)
+    })
   }
 }
 </script>

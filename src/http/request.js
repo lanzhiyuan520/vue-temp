@@ -1,8 +1,13 @@
 import axios from 'axios'
 import config from './config'
 import Vue from 'vue'
+let loadingCount = 0
 
 const request = options => {
+  if (loadingCount < 1) {
+    console.log('显示loading')
+  }
+  loadingCount++
   const { $eventBus } = Vue.prototype
   return new Promise((resolve, reject) => {
     const instance = axios.create(config)
@@ -17,6 +22,10 @@ const request = options => {
 
     // 添加响应拦截器
     instance.interceptors.response.use(function (response) {
+      loadingCount--
+      if (loadingCount < 1) {
+        console.log('隐藏loading')
+      }
       // 对响应数据做点什么
       return response;
     }, function (error) {

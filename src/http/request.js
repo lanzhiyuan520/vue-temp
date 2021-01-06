@@ -1,7 +1,9 @@
 import axios from 'axios'
 import config from './config'
+import Vue from 'vue'
 
 const request = options => {
+  const { $eventBus } = Vue.prototype
   return new Promise((resolve, reject) => {
     const instance = axios.create(config)
     // 添加请求拦截器

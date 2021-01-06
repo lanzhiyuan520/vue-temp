@@ -3,6 +3,7 @@
     <ul>
       <li v-for="item in index.houseList">{{item.title}}</li>
     </ul>
+    <button @click="showMask">点我</button>
   </div>
 </template>
 
@@ -16,10 +17,17 @@ export default {
     })
   },
   mounted () {
-    console.log('home')
     this.$http.index.getHouseRequest().then(res => {
       this.$store.commit('setHouseList',res.data.data)
     })
+  },
+  methods : {
+    showMask () {
+      this.$showMask()
+      setTimeout(() => {
+        this.$closeMask()
+      },2000)
+    }
   }
 }
 </script>

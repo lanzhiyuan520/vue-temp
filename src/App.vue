@@ -14,7 +14,7 @@
     name : 'App',
     data () {
       return {
-        cache : ['Home']
+        cache : []
       }
     },
     methods : {

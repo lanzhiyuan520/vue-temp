@@ -8,6 +8,7 @@ import filter from './filters'
 import mixin from './mixin'
 
 Vue.prototype.$http = http
+Vue.prototype.$eventBus = new Vue()
 Vue.config.productionTip = false
 Vue.use(packages)
 Vue.use(filter)

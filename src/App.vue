@@ -34,4 +34,15 @@
       cursor: pointer;
     }
   }
+  .fade-enter-active,.fade-leave-active {
+    transition: all .3s linear;
+  }
+  .fade-enter-active {
+    opacity : 0;
+    transform: translateX(-30px);
+  }
+  .fade-leave-active {
+    opacity : 0;
+    transform: translateX(30px);
+  }
 </style>

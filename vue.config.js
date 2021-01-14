@@ -3,7 +3,6 @@ module.exports = {
   lintOnSave: false,
 
   publicPath : './',
-
   css : {
     loaderOptions : {
       scss : {

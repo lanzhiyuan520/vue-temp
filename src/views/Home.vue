@@ -3,7 +3,7 @@
     <ul>
       <li v-for="item in index.houseList">{{item.title}}</li>
     </ul>
-    <button @click="showMask">点我</button>
+    <button v-checkClick="showMask">点我</button>
   </div>
 </template>
 
